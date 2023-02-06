@@ -1,0 +1,31 @@
+#!/bin/sh
+
+mkdir -p opk
+cp ./wlaol.elf opk/
+cp ./icon.png opk/icon.png
+cp -r image opk/
+cp -r sound opk/
+
+# https://unix.stackexchange.com/questions/219268/how-to-add-new-lines-when-using-echo
+print()
+	case    ${IFS- } in
+	(\ *)   printf  %b\\n "$*";;
+	(*)     IFS=\ $IFS
+	printf  %b\\n "$*"
+	IFS=${IFS#?}
+esac
+
+print '[Desktop Entry]
+Type=Application
+Name=WispLisp Array Of List
+Comment=Shoot them up
+Exec=wlaol.elf
+Icon=icon
+Terminal=false
+Type=Application
+Categories=games;
+' > opk/default."$1".desktop
+
+mksquashfs ./opk wloal_"$1".opk -all-root -noappend -no-exports -no-xattrs
+
+rm -r opk

@@ -1,0 +1,25 @@
+CC = gcc
+TARGET = wlaol.elf
+CFLAGS = -O0 -std=gnu99 -g3 `sdl-config --cflags`
+CFLAGS += -Isrc -Isrc/charcode -DLINUX
+LDFLAGS= -lSDL -lSDL_mixer -lm
+
+OBJS = src/ram.o src/util_snd.o src/function.o src/dconv.o src/scene.o src/title.o src/init.o src/act.o src/option.o src/ending.o src/logo.o src/demo.o src/stageselect.o
+OBJS += src/charcode/charcode.o src/credits.o
+
+all: $(TARGET)
+
+rm-elf:
+	-rm -f $(TARGET) $(OBJS)
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -r $(OBJS) $(TARGET)

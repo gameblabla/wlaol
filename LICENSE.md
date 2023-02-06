@@ -1,0 +1,21 @@
+<ENGLISH>
+License
+-------
+
+Copyright 2011  Alpha Secret Base. & DONG. All rights reserved.
+
+Disclaimer / Copyright / Redistribution 
+
+  This game is under the "Yawaraka(flexible)" license. 
+
+    Use at your own risk. 
+    You can freely modify and redistribute it. Conversions are really Fun! 
+    You should write the changes and the person who did them in the 
+    readme file or in a place that was obvious to find. 
+
+    If you make a cool modification, please tell me via mail or by any 
+    other means, even though that's not a condition of the license. 
+    Let me enjoy your changes too. 
+
+    If you have not done any modifications, you can freely distribute 
+    without problems.

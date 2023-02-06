@@ -1,0 +1,35 @@
+CC = gcc
+CXX = g++
+RM = rm -f
+FRAMEWORKS = /Library/Frameworks
+DEFAULT_CFLAGS = -Wall -O2 -ffast-math -I$(FRAMEWORKS)/SDL.framework/Headers -I$(FRAMEWORKS)/SDL_mixer.framework/Headers -I./
+CFLAGS = $(DEFAULT_CFLAGS) -DMacOS
+CXXFLAGS = $(DEFAULT_CFLAGS) -DMacOS
+#LDFLAGS = `sdl-config --libs`
+#LDFLAGS = -L/usr/local/mingw32/lib -logg -lvorbis -lvorbisenc -lvorbisfile -lsmpeg -lmingw32 -lSDL_gfx -lSDL_mixer -lSDLmain -lSDL -mwindows -mno-cygwin
+LDFLAGS = -Wl,-framework,SDL -Wl,-framework,SDL_mixer -Wl,-framework,Cocoa -L./ -lSDL_gfx NIBless/SDLMain.o
+
+OBJS = ram.o util_snd.o function.o dconv.o scene.o title.o init.o act.o option.o ending.o logo.o stageselect.o demo.o
+OBJS += charcode/charcode.o credits.o
+
+SOURCES = $(patsubst %.o, %.c, $(OBJS))
+
+ifeq ($(wildcard .depend),.depend)
+do-it-all: act
+include .depend
+else
+do-it-all: depend recursive
+recursive:
+	make -f Makefile.macosx
+endif
+
+.PHONY: depend
+depend: $(OBJS)
+	$(CC) -MM $(CFLAGS) $(SOURCES) > .depend
+
+.PHONY: clean
+clean:
+	$(RM) $(OBJS) *~ .depend act.exe
+
+act: $(OBJS)
+	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

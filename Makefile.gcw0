@@ -1,0 +1,27 @@
+CC = /opt/gcw0-toolchain/bin/mipsel-linux-gcc
+SDL_CONFIG = /opt/gcw0-toolchain/mipsel-gcw0-linux-uclibc/sysroot/usr/bin/sdl-config
+
+TARGET = wlaol.elf
+CFLAGS = -Ofast -march=mips32r2 -flto -std=gnu99 `$(SDL_CONFIG) --cflags`
+CFLAGS += -Isrc -Isrc/charcode -DLINUX
+LDFLAGS= -lc -lSDL -lSDL_mixer -lm -Wl,--as-needed -flto -s
+
+OBJS = src/ram.o src/util_snd.o src/function.o src/dconv.o src/scene.o src/title.o src/init.o src/act.o src/option.o src/ending.o src/logo.o src/demo.o src/stageselect.o
+OBJS += src/charcode/charcode.o src/credits.o
+
+all: $(TARGET)
+
+rm-elf:
+	-rm -f $(TARGET) $(OBJS)
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -r $(OBJS) $(TARGET)
