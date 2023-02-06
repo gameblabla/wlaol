@@ -1,0 +1,17 @@
+	{  -9, -33},	// \a_logo_p000_00_K.tga
+	{   0,   0},	// \beta_p000_00_K.tga
+	{   0, 176},	// \fonts3_K.tga
+	{   0,   0},	// \kabegami_p000_00_K.tga
+	{ -11, -41},	// \loading_p000_00_K.tga
+	{   0,   0},	// \red_font_p000_00_K.tga
+	{   0,   0},	// \red_font_p001_00_K.tga
+	{   0,   0},	// \red_font_p002_00_K.tga
+	{   0,   0},	// \red_font_p003_00_K.tga
+	{   0,   0},	// \red_font_p004_00_K.tga
+	{   0,   0},	// \red_font_p005_00_K.tga
+	{   0,   0},	// \red_font_p006_00_K.tga
+	{   0,   0},	// \red_font_p007_00_K.tga
+	{   0,   0},	// \red_font_p008_00_K.tga
+	{   0,   0},	// \red_font_p009_00_K.tga
+	{   0,   0},	// \red_p000_00_K.tga
+	{  -1, -41},	// \start_p000_00_K.tga

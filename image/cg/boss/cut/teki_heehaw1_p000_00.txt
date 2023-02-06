@@ -1,0 +1,5 @@
+	{   0,   5},	// \teki_heehaw1_p000_00_K.tga
+	{   0,   1},	// \teki_heehaw2_p000_00_K.tga
+	{   2,   0},	// \teki_heehaw3_p000_00_K.tga
+	{   0,   0},	// \teki_heehaw4_p000_00_K.tga
+	{  -2,   3},	// \teki_heehaw5_p000_00_K.tga

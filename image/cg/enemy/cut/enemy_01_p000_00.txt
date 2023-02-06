@@ -1,0 +1,5 @@
+	{   0,   0},	// \enemy_01_p000_00_K.tga
+	{   0,   0},	// \enemy_02_p000_00_K.tga
+	{   0,   0},	// \enemy_03_p000_00_K.tga
+	{   0,   0},	// \enemy_mboss_01_p000_00_K.tga
+	{  -1,   0},	// \enemy_mboss_02_p000_00_K.tga

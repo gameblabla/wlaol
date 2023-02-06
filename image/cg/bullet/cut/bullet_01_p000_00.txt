@@ -1,0 +1,4 @@
+	{   0,   0},	// \bullet_01_p000_00_K.tga
+	{   0,   0},	// \bullet_01_p001_00_K.tga
+	{   0,   0},	// \bullet_01_p002_00_K.tga
+	{   0,   0},	// \bullet_01_p003_00_K.tga

@@ -1,0 +1,3 @@
+	{   0,   0},	// \enelgy_s_p000_00_K.tga
+	{   0,   0},	// \scoer_m_p000_00_K.tga
+	{   0,   0},	// \scoer_s_p000_00_K.tga

@@ -1,0 +1,5 @@
+	{   0,   0},	// \mandara_p000_00_K.tga
+	{  -3,   0},	// \player_p000_00_K.tga
+	{  -3,   0},	// \player_p001_00_K.tga
+	{  -3,   0},	// \player_p002_00_K.tga
+	{   1,   0},	// \player_p003_00_K.tga

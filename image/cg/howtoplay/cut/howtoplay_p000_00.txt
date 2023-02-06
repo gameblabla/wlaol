@@ -1,0 +1,2 @@
+	{   0,   0},	// \howtoplay_p000_00_K.tga
+	{   0,   0},	// \howtoplay_p001_00_K.tga

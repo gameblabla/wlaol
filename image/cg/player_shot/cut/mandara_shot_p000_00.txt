@@ -1,0 +1,4 @@
+	{   0,   0},	// \mandara_shot_p000_00_K.tga
+	{   0,   0},	// \mandara_shot_tuch_p000_00_K.tga
+	{  -3,   0},	// \mandara_shot_tuch_p001_00_K.tga
+	{  -6,   0},	// \mandara_shot_tuch_p002_00_K.tga

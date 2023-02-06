@@ -1,0 +1,6 @@
+	{  -5,   0},	// \boss_dead_p000_00_K.tga
+	{  -4,   0},	// \boss_dead_p001_00_K.tga
+	{  -3,   0},	// \boss_dead_p002_00_K.tga
+	{   3,  11},	// \boss_dead_p003_00_K.tga
+	{   4,  10},	// \boss_dead_p004_00_K.tga
+	{   3,  10},	// \boss_dead_p005_00_K.tga

@@ -1,0 +1,12 @@
+	{   0,   0},	// \ending_p000_00_K.tga
+	{   0,   0},	// \ending_p001_00_K.tga
+	{   0,   0},	// \ending_p002_00_K.tga
+	{   0,   0},	// \ending_p003_00_K.tga
+	{   0,   0},	// \ending_p004_00_K.tga
+	{   0,   0},	// \ending_p005_00_K.tga
+	{-119,  74},	// \ending_story01_K.tga
+	{-104,  38},	// \ending_story02_K.tga
+	{-130,  86},	// \ending_story03_K.tga
+	{ -72,  26},	// \ending_story04_K.tga
+	{-124,  86},	// \ending_story05_K.tga
+	{-199, 146},	// \ending_story06_K.tga

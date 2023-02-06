@@ -1,0 +1,1 @@
+	{  -1,   0},	// \boss_dead_serihu_p000_00_K.tga

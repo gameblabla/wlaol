@@ -23,7 +23,6 @@ data/
 *.html
 *.data
 *.js
-*.txt
 log.txt
 *.elf
 *.opk
