@@ -1,10 +1,24 @@
 CC = /opt/gcw0-toolchain/bin/mipsel-linux-gcc
 SDL_CONFIG = /opt/gcw0-toolchain/mipsel-gcw0-linux-uclibc/sysroot/usr/bin/sdl-config
+HUGE_PAGES = 1
+PROFILE = APPLY
 
 TARGET = wlaol.elf
-CFLAGS = -Ofast -march=mips32r2 -flto -std=gnu99 `$(SDL_CONFIG) --cflags`
+
+CFLAGS		= -Wall -Wextra -Ofast -fdata-sections -ffunction-sections -mframe-header-opt -mno-fp-exceptions -mno-check-zero-division -fsingle-precision-constant -fno-common -march=mips32r2 -mtune=mips32r2 -flto
+CFLAGS		+= -mno-xgot -fsection-anchors -fno-builtin -mplt -fno-PIC -mno-shared  -mno-memcpy
+CFLAGS		+= -fno-math-errno -freorder-functions -std=gnu99 -fipa-pta
+
+ifeq ($(PROFILE), YES)
+CFLAGS 		+= -fprofile-generate=/media/data/local/home/wlaol_gcda
+else ifeq ($(PROFILE), APPLY)
+CFLAGS		+= -fprofile-use="./" -fbranch-probabilities
+endif
+
+CFLAGS += `$(SDL_CONFIG) --cflags`
 CFLAGS += -Isrc -Isrc/charcode -DLINUX
-LDFLAGS= -lc -lSDL -lSDL_mixer -lm -Wl,--as-needed -flto -s
+
+LDFLAGS     = -nodefaultlibs -lc -lgcc -lSDL -lSDL_mixer -lgcov -lm -flto -Wl,--as-needed -Wl,--gc-sections -no-pie -s
 
 OBJS = src/ram.o src/util_snd.o src/function.o src/dconv.o src/scene.o src/title.o src/init.o src/act.o src/option.o src/ending.o src/logo.o src/demo.o src/stageselect.o
 OBJS += src/charcode/charcode.o src/credits.o
@@ -16,6 +30,9 @@ rm-elf:
 
 $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+ifeq ($(HUGE_PAGES), 1)
+	/opt/gcw0-toolchain/bin/hugeedit --text --data $(TARGET)
+endif
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

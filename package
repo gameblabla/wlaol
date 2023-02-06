@@ -17,7 +17,7 @@ esac
 
 print '[Desktop Entry]
 Type=Application
-Name=WispLisp Array Of List
+Name=WLAOL
 Comment=Shoot them up
 Exec=wlaol.elf
 Icon=icon

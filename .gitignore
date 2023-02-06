@@ -27,3 +27,5 @@ data/
 log.txt
 *.elf
 *.opk
+.depend
+*.gcda

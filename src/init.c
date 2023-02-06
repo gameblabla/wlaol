@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
 	SDL_Rect rect;
 	Uint32 flags;
-	int color = 32;
+	int color = 16;
 	SDL_Surface* tmp;
 	char AppPath[1024];
 	char AppPathw[1024];
@@ -79,7 +79,12 @@ int main(int argc, char *argv[])
 	flags = SDL_HWSURFACE | SDL_FULLSCREEN | SDL_DOUBLEBUF | SDL_HWPALETTE;
 #else
 	gameflag[61] = 1;	//‰æ–Ê”{—¦
-	flags = SDL_SWSURFACE;
+	#ifdef GCW0
+	flags = SDL_HWSURFACE | SDL_TRIPLEBUF;
+	#else
+	flags = SDL_HWSURFACE | SDL_DOUBLEBUF;
+	#endif
+	
 	if ( argc > 1 )	// ‹N“®‚Éˆø”‚ª‚ ‚éê‡
 	{
 		while( *++argv != NULL )
